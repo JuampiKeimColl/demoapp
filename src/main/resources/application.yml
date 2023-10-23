@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: demo-app
+#    Se especifica el driver q se va a usar, se establece el usuario y contraseña,
+#    se define el nombre de la tabla de la base de datos
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: a
+    password: a
+    url: "jdbc:h2:mem:demoapp;DB_CLOSE_ON_EXIT=FALSE"
+  h2:
+#    Se habilita la visualización de la base de datos y sus elementos
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+#    Cada vez q se inicie la aplicación, crea las tablas
+    hibernate:
+      ddl-auto: create-drop
